@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Css/About us.css">
+    <script src="./js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./Css/swiper-bundle.min.css"/>
+</head>
+<body> 
+  <nav class="nav-container">
+    <div class="nav">
+        <div class="logo-search-container">
+            <img class="logo" src="Image/logoo.png" alt="Logo">
+            <div class="search-container">
+                <svg class="search-icon" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_215_79)">
+                    <path d="M18.9076 15.9537L12.8406 10.2238C12.6262 10.0185 12.2748 10.0185 12.0573 10.2238L11.9233 10.3504L11.3545 9.8103C13.0998 7.48118 12.8258 4.26321 10.6724 2.22665C8.23312 -0.074331 4.2659 -0.074331 1.8296 2.22665C-0.609704 4.53044 -0.609704 8.27726 1.8296 10.5811C3.03881 11.7231 4.64121 12.3054 6.24955 12.3054C7.50939 12.3054 8.77521 11.9481 9.85637 11.2224L10.4282 11.7625L10.2942 11.889C10.0797 12.0944 10.0768 12.4263 10.2942 12.6288L16.3612 18.3587C16.4237 18.4178 16.5458 18.4994 16.7424 18.4994C16.8049 18.4994 16.8764 18.491 16.9539 18.4713C17.6568 18.294 18.8392 17.1773 19.0298 16.5135C19.1161 16.2069 18.991 16.0297 18.9076 15.9537ZM9.43335 9.41085C8.55772 10.2407 7.40207 10.6542 6.24947 10.6542C5.09683 10.6542 3.94418 10.2407 3.06559 9.41085C1.31133 7.75405 1.31133 5.05362 3.06559 3.39682C4.82286 1.74002 7.67913 1.74002 9.43339 3.39682C11.1906 5.05366 11.1906 7.75405 9.43335 9.41085Z" fill="#469597"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_215_79">
+                    <rect width="19.0588" height="18" fill="white" transform="translate(0 0.5)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                <input type="search" placeholder="Titles" class="search-bar nonmob">
+                <div class="autocom-box">
+                    <li>Featured Artists</li>
+                    <li>Error Page</li>
+                </div>
+            </div>
+        </div>
+            <div class="nav-buttons-container">
+                <ul class="nav-buttons nonmob">
+                    <img src="./Image/5.png" width="15%" >
+                    <img src="Image/4.png" width="25%">
+                    <div class="profile-action">
+                        <div class="profile-pic" onclick="profileToggle();">
+                            <img src="Image/3.png" alt="Profile-photo">
+                        </div>
+                        <div class="profile-menu">
+                            <h3>Username<br><span>Email</span></h3>
+                            <ul>
+                                <li><a href="UserProfile.html" rel="noopener noreferrer">My Profile</a></li>
+                                <li><a href="UserSettings.html" rel="noopener noreferrer">Settings</a></li>
+                                <li><a href="heropage.html" rel="noopener noreferrer">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+                <img class="hamborg" src="Assets/hamborg.svg" alt="mobile-hamburger">
+            </div>
+    </div>  
+  <section class="about-us">
+        <div class="about">
+          <img src="./Image/2.png">
+          <div class="text">
+            <h2>About Us</h2>
+            
+              <p>We understand the challenges faced by researchers in finding and selecting relevant capstone theses for their studies. That's why we've created a comprehensive online platform that connects researchers with a vast repository of high-quality capstone theses.
+
+                Our mission is to provide researchers with easy access to the knowledge they need to successfully complete their capstone projects. We believe that access to high-quality research should be accessible to all, and we are committed to making our platform as user-friendly and comprehensive as possible.
+                
+               <b> Our Services</b>
+                
+                Extensive Capstone Thesis Database: We maintain a vast collection of capstone theses from a wide range of academic disciplines. Our database is constantly growing, ensuring that you have access to the most up-to-date research.
+                
+                Advanced Search Engine: Our powerful search engine allows you to quickly and easily find capstone theses that match your specific research interests. You can search by keyword, author, institution, and more.
+                
+                Detailed Thesis Summaries: Each thesis in our database is accompanied by a detailed summary that provides an overview of the research question, methodology, and findings. This information will help you determine whether a particular thesis is relevant to your needs.
+                
+                Our Commitment to Researchers
+                
+                We are committed to providing researchers with the resources they need to succeed. We believe that access to high-quality research is essential for advancing knowledge and improving our world.
+                
+                <b> Join Us Today</b>
+                
+                If you are a researcher looking for capstone theses, we invite you to explore our website and start your search today. We are confident that you will find the information you need to successfully complete your capstone project.
+            </p>     
+            
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        // Profile click
+        function profileToggle(){
+            const menuToggle = document.querySelector('.profile-menu')
+            menuToggle.classList.toggle('menu-active')
+        }
+        // Search Bar Script (nabaliw ako.... --Aeron)
+        let suggestions = ["Featured Artists", "Error Page"];
+        const searchWrapper = document.querySelector(".search-container") ;
+        const inputbox = searchWrapper.querySelector("input");
+        const suggestionBox = searchWrapper.querySelector(".autocom-box");
+        // user keypress and release
+        inputbox.onkeyup = (e)=>{
+            let userData = e.target.value; //user inputs anything
+            let emptyArray = [];
+            if(userData){
+                emptyArray = suggestions.filter((data)=>{
+                    return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); //filter data and only show words that start with the first letter
+                });
+                emptyArray = emptyArray.map((data)=>{  //input suggestions are given
+                    return data = '<li>'+ data +'<li>';
+                }); console.log(emptyArray);
+                searchWrapper.classList.add("active"); //shows the autocomplete box
+                showSuggestions(emptyArray); //this function will show suggestions
+                let allList = suggestionBox.querySelectorAll("li");
+                for(let i = 0; i < allList.length; i++) { //adding onclick attributes
+                    allList[i].setAttribute("onclick", "select(this)");
+                }
+            } else{
+                searchWrapper.classList.remove("active"); //hides the autocomplete box
+            }
+        }
+        function select(element){
+            let selectUserData = element.textContent; //getting the textcontent of the clicked word
+            if (selectUserData === "Featured Artists"){
+                window.location.href = "onlogsearchpage.html"; //FINALLYY AJLS HDKJAHDKASHKDF if user clicks the featured artists
+            }
+            else if(selectUserData === "Error Page"){
+                window.location.href = "errorpage.html"
+            }
+            searchWrapper.classList.remove("active");
+        }
+        // Show suggestions function
+        function showSuggestions(list){
+            let listData;
+            if(!list.length){
+                userValue = inputbox.value;
+                listData = '<li>'+ userValue +'<li>';
+                
+            }else{
+                listData = list.join('');
+            }
+            suggestionBox.innerHTML = listData;
+        }
+        // Search Button
+        $('.search-container').click((e) => {
+            $(e.currentTarget).addClass('active')
+            $('.search-bar').removeClass('nonmob')
+        })
+        $(window).resize(function(){
+            $('.search-container').removeClass('active')
+            $('.search-bar').addClass('nonmob')
+        })
+    </script>
+</body>
+</html>
